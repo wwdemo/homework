@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Neo4j Homework Assignment - Cato Johannessen</title>
+</head>
+
+<body>
+
+		<h2>Neo4j Homework Assignment - Cato Johannessen</h2>
+		<p>List of employee nodes in the database</p>
+
+
+		<table id="employeelist">
+			<thead>
+				<tr>
+					<th>emp_id</th>
+					<th>name</th>
+				</tr>
+			</thead>
+			<tbody>
+			</tbody>
+		</table>
+
+
+		<p>Create new employee node in the database</p>
+		<p>Employee ID: <input type="text" id="emp_id"></p> 
+		<p>Name: <input type="text" id="name"></p> 
+		<p><input type="submit" id="submit" value="New employee">
+	
+
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+	<script type="text/javascript">
+		$(function() {
+			function getEmployees() {
+				$.get("/employee", function(data) {
+					var t = $("table#employeelist tbody").empty();
+					if (!data || data.length == 0)
+						return;
+					data.forEach(function(row, index) {
+						var employee = row.employee
+						$(
+								"<tr><td class='employee'>" + employee.emp_id
+										+ "</td><td>" + employee.name
+										+ "</td></tr>").appendTo(t)
+
+					});
+				}, "json");
+				return false;
+			}
+
+			getEmployees();
+		})
+	</script>
+</body>
+</html>
