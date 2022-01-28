@@ -12,10 +12,11 @@ This operation will take 2 parameters; a String and an int. The String value wil
 
 For your API - Neo4J communication use a Bolt driver (https://neo4j.com/docs/developer-manual/current/drivers/).
 
-##Demo
+## Demo
 
 A demo solution is running in AWS and can be accessed [here](http://44.200.245.161). The API connects to a Neo4j Sandbox instance using Bolt. 
 
+(Go directly to [Setup](https://github.com/wwdemo/homework#setup))
 
 ## Overview
 
@@ -27,7 +28,6 @@ When creating new Employee nodes, a “CREATE” Cypher statement is used. This 
 
     CREATE CONSTRAINT ON (e:Employee) ASSERT e.emp_id IS UNIQUE
 
-The OpenAPI documentation for the REST service can be accessed at [http://localhost/v3/api-docs/](http://localhost/v3/api-docs/)
 
 ## API End Points:
 
@@ -45,7 +45,11 @@ Alternate POST end point:
 POST /employee/{id}/{name} 
 - creates new Employee node with the emp_id and name from the URI
 
+The OpenAPI documentation for the REST service can be accessed at [http://localhost/v3/api-docs/](http://localhost/v3/api-docs/)
+
 ## Setup
+
+The following steps are needed to run the API on your local machine.
 
 To connect the API to your Neo4j database instance, go to **src/main/resources/application.properties** and add the values for the following properties:
 
