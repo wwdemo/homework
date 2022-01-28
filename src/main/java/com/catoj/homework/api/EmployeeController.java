@@ -35,12 +35,12 @@ public class EmployeeController {
 	}
 	
 	@PostMapping("/employee/{id}/{name}")
-	public List<Employee>  createEmployee(@PathVariable("id") int id, @PathVariable("name") String name) {
+	public List<Employee>  createEmployeeURI(@PathVariable("id") int id, @PathVariable("name") String name) {
 		return employeeService.createEmployee(id, name);
 	}
 	
 	@PostMapping("/employee")
-	public List<Employee>  newEmployee(@RequestBody Employee newEmployee) {
+	public List<Employee>  createEmployeeJSON(@RequestBody Employee newEmployee) {
 		return employeeService.createEmployee(newEmployee.getEmp_id(), newEmployee.getName());
 	}
 	

@@ -1,0 +1,5 @@
+curl -X POST http://localhost/employee -H 'Content-Type: application/json' -d '{"emp_id":1,"name":"Peter Anderson"}'
+curl -X POST http://localhost/employee -H 'Content-Type: application/json' -d '{"emp_id":2,"name":"Frank Smythe”}'
+curl -X POST http://localhost/employee -H 'Content-Type: application/json' -d '{“emp_id":3,"name":"Billy Thornton"}'
+curl -X POST http://localhost/employee/4/Anders%20Johnson
+curl -X GET http://localhost/employee
